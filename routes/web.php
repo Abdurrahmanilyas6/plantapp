@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\PlantController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\API\MidtransController;
 
 /*
@@ -26,6 +29,12 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::resource('plant', PlantController::class);
+    Route::resource('users', UserController::class);
+
+    Route::get('transactions/{id}/status/{status}', [TransactionController::class, 'changeStatus'])
+            ->name('transactions.changeStatus');
+    Route::resource('transactions', TransactionController::class);
 });
 
 
