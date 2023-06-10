@@ -14,12 +14,13 @@ return new class extends Migration
         Schema::create('plants', function (Blueprint $table) {
             $table->id();
 
+            $table->text('picturePath')->nullable();
             $table->string('name')->nullable();
             $table->text('description')->nullable();
+            $table->text('rules')->nullable();
             $table->integer('price')->nullable();
             $table->double('rate')->nullable();
-            $table->string('types')->default();
-            $table->text('picturePath')->nullable();
+            $table->string('type')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

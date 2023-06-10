@@ -2,20 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use Illuminate\View\View;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use App\Http\Requests\UserRequest;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\Foundation\Application;
+use App\Models\User;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return Application|Factory|Response|View
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function index()
     {
